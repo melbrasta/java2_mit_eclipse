@@ -27,6 +27,13 @@ public class Personlist
 
 		System.out.println( "Aktuelle Anzahl Personen in der Liste: " +  liste.size() ) ;
 		
+		// zur Übersicht eine leere Zeile
+		System.out.println("\n");
+		
+		printList(liste);
+		
+		System.out.println("\n");
+		
 		
 		// Lambda Funktion um unter 18 und über 80 raus zu löschen
 		liste.removeIf( value -> (value.getAge() < 18 || value.getAge() > 80) );
@@ -48,6 +55,7 @@ public class Personlist
 		
 		liste.sort( (a,b) -> a.getHeight() -b.getHeight()  ) ;
 		
+		// zur Übersicht eine leere Zeile
 		System.out.println("\n");
 		
 		printList(liste);
