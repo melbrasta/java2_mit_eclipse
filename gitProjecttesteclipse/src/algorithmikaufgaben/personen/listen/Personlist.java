@@ -42,10 +42,15 @@ public class Personlist
 		
 		
 		//oder mit der Methode die Liste ausgeben lassen:
+		System.out.println("\n");
+		printList(liste);		//vor dem Sortieren
+		
+		
+		liste.sort( (a,b) -> a.getHeight() -b.getHeight()  ) ;
+		
+		System.out.println("\n");
+		
 		printList(liste);
-		
-		
-		liste.sort(  ) ;
 		
 //		for( int i = 0; i < liste.size(); i++ )
 //		{
