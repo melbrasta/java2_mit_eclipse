@@ -45,7 +45,7 @@ public class Personlist
 		printList(liste);
 		
 		
-		Collections.sort( liste ) ;
+		liste.sort(  ) ;
 		
 //		for( int i = 0; i < liste.size(); i++ )
 //		{
