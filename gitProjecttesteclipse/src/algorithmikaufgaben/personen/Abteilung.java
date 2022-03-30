@@ -6,47 +6,33 @@ import java.util.List;
 public class Abteilung
 {
 	private String name;
-	private Mitarbeiter abteilungsleiter;
+	private String abteilungsleiter;
 	private LinkedList<Mitarbeiter> liste;
+	private int anzahlMitarbeiter;
 	
 	
 	
-	public Abteilung(String name, String abteilungsleiter, String mitarbeiter)
+	public Abteilung(String name, String abteilungsleiter, int anzahlMitarbeiter)
 		{
-			// TODO Auto-generated constructor stub
+			super();
+			this.name = name;
+			this.abteilungsleiter = abteilungsleiter;
+			this.anzahlMitarbeiter = anzahlMitarbeiter;
+			
+			
 		}
+
+
 
 
 
 	public static void main(String[] args)
 	{
-		LinkedList<Abteilung> liste = new LinkedList<Abteilung>();
-		
-		
-		liste.add(new Abteilung("Marketing", "Hans Müller", "viele Mitarbeiter"));
-		liste.add(new Abteilung("Marketing", "Hans Müller", "viele Mitarbeiter"));
-		liste.add(new Abteilung("Marketing", "Hans Müller", "viele Mitarbeiter"));
-		
-		
-		System.out.println( "Aktuelle Anzahl Abteilungen in der Liste: " +  liste.size() ) ;
-//		printList(liste);
-		
-		/**
-		 * hier ist die ausgabe der Liste = null :(
-		 */
-		
-		liste.forEach( value -> {
-			System.out.println("Current value: " + value);
-		});
 		
 		
 		
-		
-		System.out.println(liste);
-	//
-	//
-	//
-	//
+
+
 		
 	}
 	
@@ -85,14 +71,14 @@ public class Abteilung
 
 
 
-	public Mitarbeiter getAbteilungsleiter()
+	public String getAbteilungsleiter()
 	{
 		return abteilungsleiter;
 	}
 
 
 
-	public void setAbteilungsleiter(Mitarbeiter abteilungsleiter)
+	public void setAbteilungsleiter(String abteilungsleiter)
 	{
 		this.abteilungsleiter = abteilungsleiter;
 	}
@@ -113,15 +99,15 @@ public class Abteilung
 
 
 
-	private String getInfo()
-	{
-		
-		return this.getName() + this.getAbteilungsleiter() + this.getListe();
-	}
+//	private String getInfo()
+//	{
+//		
+//		return this.getName() + this.getAbteilungsleiter();
+//	}
 	
 	
 	public String toString() {
-		return this.getInfo();
+		return this.name + this.abteilungsleiter + " " + this.anzahlMitarbeiter;
 	}
 	
 	

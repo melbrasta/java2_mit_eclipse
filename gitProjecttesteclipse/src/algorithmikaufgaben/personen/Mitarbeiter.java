@@ -12,7 +12,7 @@ public class Mitarbeiter extends Personen
 			this.abteilung = abteilung;
 		}
 	
-	
+
 
 	
 	
@@ -42,7 +42,9 @@ public class Mitarbeiter extends Personen
 
 	public String toString() 
 	{
-		return "\nMitarbeiter: " + this.getInfo() + "\nMitarbeiternummer: " + this.getPersonalnr() + "\nArbeitet in Abteilung: \" " + getMitarbeiterabteilung() + "\"";
+	
+		//	return "\nMitarbeiter: " + this.getInfo() + "\nMitarbeiternummer: " + this.getPersonalnr() + "\nArbeitet in Abteilung: \" " + getMitarbeiterabteilung() + "\"";
+	return super.toString()+ " " + this.personalnr;
 	}
 
 	
