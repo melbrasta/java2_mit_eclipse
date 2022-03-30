@@ -101,6 +101,11 @@ public class Programm
 					
 				
 				liste.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
+				
+				/**
+				 * if not exists einfügen!!!
+				 */
+				listeabt.add(null)
 			
 				
 				
@@ -114,7 +119,7 @@ public class Programm
 	/**
 	 * 			
 	 */
-				System.out.println(listeabt);
+//				System.out.println(listeabt);
 	/**
 	 * 		
 	 */
