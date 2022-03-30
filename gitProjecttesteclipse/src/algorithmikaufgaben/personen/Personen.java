@@ -13,14 +13,14 @@ public class Personen
 	private String firstname;
 	private String lastname;
 	private int age;
-	private int height;
+
 	
-	public Personen( String firstname, String lastname ,int age, int height ) 
+	public Personen( String firstname, String lastname ,int age ) 
 	{
 		this.firstname = firstname;
 		this.lastname = lastname;	
 		this.age = age;
-		this.height = height;
+
 				
 	}
 	
@@ -43,14 +43,14 @@ public class Personen
 		return this.age;
 	}
 	
-	public int getHeight()
-	{
-		return this.height;
-	}
+//	public int getHeight()
+//	{
+//		return this.height;
+//	}
 	
 	public String getInfo()
 	{
-		return this.getFullname() + " "  + this.getAge() + " " + this.getHeight();
+		return this.getFullname() + " "  + this.getAge();
 	}
 	
 	public String toString() {
