@@ -6,7 +6,7 @@ import java.util.List;
 public class Abteilung
 {
 	private String name;
-	private String abteilungsleiter;
+	private Mitarbeiter abteilungsleiter;
 	private LinkedList<Mitarbeiter> liste;
 	
 	
@@ -24,15 +24,29 @@ public class Abteilung
 		
 		
 		liste.add(new Abteilung("Marketing", "Hans Müller", "viele Mitarbeiter"));
+		liste.add(new Abteilung("Marketing", "Hans Müller", "viele Mitarbeiter"));
+		liste.add(new Abteilung("Marketing", "Hans Müller", "viele Mitarbeiter"));
 		
 		
 		System.out.println( "Aktuelle Anzahl Abteilungen in der Liste: " +  liste.size() ) ;
-		printList(liste);
+//		printList(liste);
+		
+		/**
+		 * hier ist die ausgabe der Liste = null :(
+		 */
 		
 		liste.forEach( value -> {
 			System.out.println("Current value: " + value);
 		});
 		
+		
+		
+		
+		System.out.println(liste);
+	//
+	//
+	//
+	//
 		
 	}
 	
@@ -46,8 +60,55 @@ public class Abteilung
 		}		
 	}
 	
-	public String toString() {
-		return this.getInfo();
+	
+	
+	
+	
+
+
+
+	
+	
+	
+
+	public String getName()
+	{
+		return name;
+	}
+
+
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+
+
+	public Mitarbeiter getAbteilungsleiter()
+	{
+		return abteilungsleiter;
+	}
+
+
+
+	public void setAbteilungsleiter(Mitarbeiter abteilungsleiter)
+	{
+		this.abteilungsleiter = abteilungsleiter;
+	}
+
+
+
+	public LinkedList<Mitarbeiter> getListe()
+	{
+		return liste;
+	}
+
+
+
+	public void setListe(LinkedList<Mitarbeiter> liste)
+	{
+		this.liste = liste;
 	}
 
 
@@ -55,7 +116,12 @@ public class Abteilung
 	private String getInfo()
 	{
 		
-		return this.name;
+		return this.getName() + this.getAbteilungsleiter() + this.getListe();
+	}
+	
+	
+	public String toString() {
+		return this.getInfo();
 	}
 	
 	

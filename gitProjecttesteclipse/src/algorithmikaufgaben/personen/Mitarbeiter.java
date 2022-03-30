@@ -3,12 +3,16 @@ package algorithmikaufgaben.personen;
 public class Mitarbeiter extends Personen
 {
 	private int personalnr;
+	private String abteilung;
 
-	public Mitarbeiter(String firstname, String lastname, int age, int personalnr)
+	public Mitarbeiter(String firstname, String lastname, int age, int personalnr, String abteilung)
 		{
 			super(firstname, lastname, age);
 			this.setPersonalnr(personalnr);
+			this.abteilung = abteilung;
 		}
+	
+	
 
 	
 	
@@ -25,13 +29,20 @@ public class Mitarbeiter extends Personen
 	{
 		this.personalnr = personalnr;
 	}
+	
+	
+	public String getMitarbeiterabteilung()
+	{
+		return abteilung;
+		
+	}
 
 	
 	
 
 	public String toString() 
 	{
-		return "\nMitarbeiter: " + this.getInfo() + "\nMitarbeiternummer: " + this.getPersonalnr();
+		return "\nMitarbeiter: " + this.getInfo() + "\nMitarbeiternummer: " + this.getPersonalnr() + "\nArbeitet in Abteilung: \" " + getMitarbeiterabteilung() + "\"";
 	}
 
 	

@@ -32,9 +32,13 @@ public class Programm
 			System.out.println("Bitte Mitarbeiter hinzufügen:[mitarbeiternr]");
 			String snr = sc.nextLine();
 			int neueMitNr = Integer.valueOf(snr);
+			
+			System.out.println("Bitte Mitarbeiter einer bestehenden Abteilung zuordnen oder eine neue Abteilung erstellen:[abteilung]");
+			System.out.println("\n");
+			String mitabteil = sc.nextLine();
 				
 			
-			liste.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr));
+			liste.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
 		
 			sc.close();
 			
@@ -70,6 +74,8 @@ public class Programm
 			liste.forEach( value -> {
 				System.out.println("Neuen Kunden angelegt: " + value);
 			});
+//			printList(liste);
 		}
 	}
+	
 }
