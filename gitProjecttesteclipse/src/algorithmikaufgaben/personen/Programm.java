@@ -107,7 +107,7 @@ public class Programm
 					liste.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
 					
 					/**
-					 * TODO if not exists einfügen!!!
+					 * TODO if listenname not exists einfügen!!!
 					 */
 		//			listeabt.add(mitabteil)
 				
