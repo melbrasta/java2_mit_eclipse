@@ -19,146 +19,218 @@ public class Programm
 		LinkedList<Mitarbeiter> listeMitar = new LinkedList<Mitarbeiter>();
 		listeMitar.add(new Mitarbeiter("hans","peter",67,556897,"design"));
 		
-		LinkedList<Abteilung> listeabt = new LinkedList<Abteilung>();
-		listeabt.add(new Abteilung("Marketing", "Hans Müller",3));
-		listeabt.add(new Abteilung("design", "Hans Müller",4));
-		listeabt.add(new Abteilung("telefon", "Hans Müller",7));
+		LinkedList<Abteilung> listeAbt = new LinkedList<Abteilung>();
+		listeAbt.add(new Abteilung(" Marketing ", " Hans Müller ",3));
+		listeAbt.add(new Abteilung(" design ", " Hans Müller ",4));
+		listeAbt.add(new Abteilung(" telefon ",  " Hans Müller ",7));
+		
+		LinkedList<Kunde> listeKun = new LinkedList<Kunde>();
+		listeKun.add(new Kunde(" kauf "," mann ",67,556897));
 		
 		
+/**
+ * 	hier werden listen getestet
+ */
+//		System.out.println(listeMitar.get(0));
+//		System.out.println(listeAbt.get(1));
+//		listeAbt.remove(1);
+//		System.out.println(listeAbt.get(1));
+//				
+//		System.out.println( "Aktuelle Anzahl Abteilungen in der Liste: " +  listeAbt.size() ) ;
+	//		printList(liste);
 		
 		
-		
-		System.out.println(listeMitar.get(0));
-		
-		
-		System.out.println( "Aktuelle Anzahl Abteilungen in der Liste: " +  listeabt.size() ) ;
-//		printList(liste);
-		
-		/**
-		 * hier ist die ausgabe der Liste = null :(
-		 */
-		
-//		listeabt.forEach( value -> {
-//			System.out.println("Current value: " + value);
-//		});
-		
-		
-		
-		
-	
-	//
-	//
-	//
-	//
-		
-		
-		
-		
-		
-		
-		
+		//
+		//
+		//
+		//
+			
+				
+			
 		Scanner sc = new Scanner (System.in);	
 		
 		
 		
 		String anlegen =null;
+		String mode =null;
+		String entfernen=null;
 		do
 		{
 			anlegen =null;
-
+			mode =null;
+			entfernen=null;
+	
 			
-			System.out.println("[Mitarbeiter] oder [Kunde] anlegen?");
-			anlegen = sc.nextLine();
 			
-
-			if (anlegen.equals("Mitarbeiter"))
+			System.out.println("Mode:\n[1] = Create  \n[2] = Delete ");
+			mode = sc.nextLine();
+			if (mode.equals("1"))		//create
 			{
-				LinkedList<Mitarbeiter> liste = new LinkedList<Mitarbeiter>();
-			
-				System.out.println("Bitte Mitarbeiter hinzufügen:[vorname]");
-				
-				String neueMitName = sc.nextLine();
-				
-				System.out.println("Bitte Mitarbeiter hinzufügen:[nachname]");
-				String neueMitNachame = sc.nextLine();
-				
-				System.out.println("Bitte Mitarbeiter hinzufügen:[age]");
-				String sage = sc.nextLine();
-				int neueMitAge = Integer.valueOf(sage);
-				
-				
-				
-				System.out.println("Bitte Mitarbeiter hinzufügen:[mitarbeiternr]");
-				String snr = sc.nextLine();
-				int neueMitNr = Integer.valueOf(snr);
-				showabteilung(listeabt);
-				System.out.println("Bitte Mitarbeiter einer bestehenden Abteilung zuordnen oder eine neue Abteilung erstellen:[abteilung]");
-				System.out.println("\n");
-				
-
-				
-				String mitabteil = sc.nextLine();
 					
-				
-				liste.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
 				
 				/**
-				 * if not exists einfügen!!!
+				 *  TODO hier fehlt noch case 3 = Abteilung erstellen
 				 */
-				listeabt.add(null)
+				System.out.println("\nAnlegen:\n[1] = Mitarbeiter,[2] = Kunde oder [3] = Abteilung\n");
+				anlegen = sc.nextLine();
+				
+	
+				if (anlegen.equals("Mitarbeiter" )||anlegen.equals("1"))
+				{
+					LinkedList<Mitarbeiter> liste = new LinkedList<Mitarbeiter>();
+				
+					System.out.println("Bitte Mitarbeiter hinzufügen:[vorname]");
+					
+					String neueMitName = sc.nextLine();
+					
+					System.out.println("Bitte Mitarbeiter hinzufügen:[nachname]");
+					String neueMitNachame = sc.nextLine();
+					
+					System.out.println("Bitte Mitarbeiter hinzufügen:[age]");
+					String sage = sc.nextLine();
+					int neueMitAge = Integer.valueOf(sage);
+					
+					
+					
+					System.out.println("Bitte Mitarbeiter hinzufügen:[mitarbeiternr]");
+					String snr = sc.nextLine();
+					int neueMitNr = Integer.valueOf(snr);
+					showabteilung(listeAbt);
+					System.out.println("Bitte Mitarbeiter einer bestehenden Abteilung zuordnen oder eine neue Abteilung erstellen:[abteilung]");
+					System.out.println("\n");
+					
+	
+					
+					String mitabteil = sc.nextLine();
+						
+					
+					liste.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
+					
+					/**
+					 * TODO if not exists einfügen!!!
+					 */
+		//			listeabt.add(mitabteil)
+				
+					
+					
+	//				sc.close();
+					
+					liste.forEach( value -> {
+						System.out.println("Neuen Mitarbeiter angelegt: " + value);
+					});
+					
+					
+		/**
+		 * 			
+		 */
+	//				System.out.println(listeabt);
+		/**
+		 * 		
+		 */
+					
+					
 			
-				
-				
-//				sc.close();
-				
-				liste.forEach( value -> {
-					System.out.println("Neuen Mitarbeiter angelegt: " + value);
-				});
-				
-				
-	/**
-	 * 			
+				}else if (anlegen.equals("Kunde" )||anlegen.equals("2"))
+				{
+	/** nach oben gewandert	
+	 *  			LinkedList<Kunde> listeKun = new LinkedList<Kunde>();
 	 */
-//				System.out.println(listeabt);
-	/**
-	 * 		
-	 */
+					
+					System.out.println("Bitte Kunde hinzufügen:[vorname]");
+					
+					String neueMitName = sc.nextLine();
+					
+					System.out.println("Bitte Kunde hinzufügen:[nachname]");
+					String neueMitNachame = sc.nextLine();
+					
+					System.out.println("Bitte Kunde hinzufügen:[age]");
+					String sage = sc.nextLine();
+					int neueMitAge = Integer.valueOf(sage);
+					
+					
+					System.out.println("Bitte Kunde hinzufügen:[Kundenr]");
+					String snr = sc.nextLine();
+					int neueKunNr = Integer.valueOf(snr);
+						
+					
+					listeKun.add(new Kunde(neueMitName, neueMitNachame, neueMitAge, neueKunNr));
+				System.out.println("\nNeue Kundenliste:\n");
+					listeKun.forEach( value -> {
+						System.out.println(value);
+					});
+
+				}
+			}	//if mode ende
+			else if (mode.equals("2"))	//delete
+			{
+				System.out.println("drop database also :D");
+				System.out.println("\nEntfernen:\n[1] = Mitarbeiter,[2] = Kunde oder [3] = Abteilung\n");
+				entfernen = sc.nextLine();
 				
+	
+				if (entfernen.equals("Mitarbeiter" )||entfernen.equals("1"))
+				{
+	//				LinkedList<Mitarbeiter> liste = new LinkedList<Mitarbeiter>();
+				
+					
+
+					System.out.println("Bitte Eintrag Nummer [ ] entfernen:");
+					System.out.println("\n");
+					
+					listeMitar.forEach( value -> {
+						System.out.println("Aktuelle Mitarbeiterliste: " + value);
+					});
+					String  remNr= sc.nextLine();
+					int remEntry = Integer.valueOf(remNr);
+					
+					listeMitar.remove(remEntry);
+					
+					
+	//				sc.close();
+					
+//					liste.forEach( value -> {
+//						System.out.println("Neuen Mitarbeiter angelegt: " + value);
+//					});
+//					
+					
+		/**
+		 * 			
+		 */
+	//				System.out.println(listeabt);
+		/**
+		 * 		
+		 */
+					
+					
+			
+				}else if (entfernen.equals("Kunde" )||entfernen.equals("2"))
+				{
+					
+					System.out.println("Bitte Kunde entfernen: ");
+					
+					System.out.println("\nAktuelle Kundenliste\n");
+					listeKun.forEach( value -> {
+						System.out.println(value);
+					});
+
+					String  remKu= sc.nextLine();
+					int remKunde = Integer.valueOf(remKu);
+					
+					listeKun.remove(remKunde);	
+					
+					System.out.println("\nNeue Kundenliste\n");
+					listeKun.forEach( value -> {
+					System.out.println(value);
+					
+					});
+
+				}
+			}	//if mode ende
+			
+		}while (!mode.equals("quit"));
 				
 		
-			}else if (anlegen.equals("Kunde"))
-			{
-				LinkedList<Kunde> liste = new LinkedList<Kunde>();
-				
-				System.out.println("Bitte Kunde hinzufügen:[vorname]");
-				
-				String neueMitName = sc.nextLine();
-				
-				System.out.println("Bitte Kunde hinzufügen:[nachname]");
-				String neueMitNachame = sc.nextLine();
-				
-				System.out.println("Bitte Kunde hinzufügen:[age]");
-				String sage = sc.nextLine();
-				int neueMitAge = Integer.valueOf(sage);
-				
-				
-				System.out.println("Bitte Kunde hinzufügen:[Kundenr]");
-				String snr = sc.nextLine();
-				int neueKunNr = Integer.valueOf(snr);
-					
-				
-				liste.add(new Kunde(neueMitName, neueMitNachame, neueMitAge, neueKunNr));
-			
-//				sc.close();
-				
-				liste.forEach( value -> {
-					System.out.println("Neuen Kunden angelegt: " + value);
-				});
-	//			printList(liste);
-			}
-			
-		} 
-		while (!anlegen.equals("quit"));
 	}
 	
+		
 }

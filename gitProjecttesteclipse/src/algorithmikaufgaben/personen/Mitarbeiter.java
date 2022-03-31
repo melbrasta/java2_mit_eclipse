@@ -4,6 +4,7 @@ public class Mitarbeiter extends Personen
 {
 	private int personalnr;
 	private String abteilung;
+	// TODO abteilung verbinden und nicht als String
 
 	public Mitarbeiter(String firstname, String lastname, int age, int personalnr, String abteilung)
 		{
