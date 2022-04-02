@@ -77,7 +77,7 @@ public class Programm
 	
 				if (anlegen.equals("Mitarbeiter" )||anlegen.equals("1"))
 				{
-					LinkedList<Mitarbeiter> liste = new LinkedList<Mitarbeiter>();
+	//				LinkedList<Mitarbeiter> listeMitar = new LinkedList<Mitarbeiter>();
 				
 					System.out.println("Bitte Mitarbeiter hinzufügen:[vorname]");
 					
@@ -104,7 +104,7 @@ public class Programm
 					String mitabteil = sc.nextLine();
 						
 					
-					liste.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
+					listeMitar.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
 					
 					/**
 					 * TODO if listenname not exists einfügen!!!
@@ -115,7 +115,7 @@ public class Programm
 					
 	//				sc.close();
 					
-					liste.forEach( value -> {
+					listeMitar.forEach( value -> {
 						System.out.println("Neuen Mitarbeiter angelegt: " + value);
 					});
 					
@@ -154,11 +154,19 @@ public class Programm
 						
 					
 					listeKun.add(new Kunde(neueMitName, neueMitNachame, neueMitAge, neueKunNr));
-				System.out.println("\nNeue Kundenliste:\n");
+					System.out.println("\nNeue Kundenliste:\n");
 					listeKun.forEach( value -> {
 						System.out.println(value);
 					});
 
+				} 
+				else if (anlegen.equals("Abteilung" )||anlegen.equals("3"))
+				{
+	/**
+	 * TODO	Anlegen: abteilung			
+	 */
+					System.out.println(listeAbt);
+					showabteilung(listeAbt);
 				}
 			}	//if mode ende
 			else if (mode.equals("2"))	//delete
@@ -178,7 +186,7 @@ public class Programm
 					System.out.println("\n");
 					
 					listeMitar.forEach( value -> {
-						System.out.println("Aktuelle Mitarbeiterliste: " + value);
+					System.out.println("Aktuelle Mitarbeiterliste: " + value);
 					});
 					String  remNr= sc.nextLine();
 					int remEntry = Integer.valueOf(remNr);
