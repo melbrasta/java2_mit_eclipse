@@ -44,8 +44,18 @@ public class Programm
 		//
 		//
 		//
-			
-				
+/**
+ * TODO	
+ */
+
+		System.out.println(listeAbt.get(0));
+		if (listeAbt.get(0).contains(" Marketing ")) 
+		{
+			System.out.println(listeAbt.get(0));
+		}
+		
+		
+//		showabteilung(listeAbt);
 			
 		Scanner sc = new Scanner (System.in);	
 		
@@ -102,17 +112,20 @@ public class Programm
 	
 					
 					String mitabteil = sc.nextLine();
-					/**
-					 * tokentest
-					 */
-						
-					
-					listeMitar.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
 					
 					/**
 					 * TODO if listenname not exists einfügen!!!
+					 * 
 					 */
-		//			listeabt.add(mitabteil)
+					
+					System.out.println(listeAbt);
+					listeAbt.add(new Abteilung(mitabteil,  neueMitName + " "+ neueMitNachame,7));
+
+					listeMitar.add(new Mitarbeiter(neueMitName, neueMitNachame, neueMitAge, neueMitNr, mitabteil));
+					
+					showabteilung(listeAbt);
+					
+
 				
 					
 					
@@ -235,8 +248,23 @@ public class Programm
 					
 					});
 
+				}else if (entfernen.equals("Abteilung" )||entfernen.equals("3"))
+				{
+					System.out.println("Bitte Eintrag Nummer [ ] entfernen:");
+					System.out.println("\n");
+					
+					listeAbt.forEach( value -> {
+					System.out.println("Aktuelle Abteilungen: " + value);
+					});
+					String  remNr= sc.nextLine();
+					int remEntry = Integer.valueOf(remNr);
+					
+					listeAbt.remove(remEntry);
+					
+					
+	//				sc.close();
 				}
-			}	//if mode ende
+			}
 			
 		}while (!mode.equals("quit"));
 				

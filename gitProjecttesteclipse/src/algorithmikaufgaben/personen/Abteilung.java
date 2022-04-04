@@ -99,15 +99,24 @@ public class Abteilung
 
 
 
-//	private String getInfo()
-//	{
-//		
-//		return this.getName() + this.getAbteilungsleiter();
-//	}
+	public String toString()
+	{
+		
+		return this.getName();
+	}
 	
 	
-	public String toString() {
+	public String getInfo() {
 		return this.name + this.abteilungsleiter + " " + this.anzahlMitarbeiter;
+	}
+
+
+
+
+
+	public boolean contains(String string) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

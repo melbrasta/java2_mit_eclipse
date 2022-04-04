@@ -45,7 +45,7 @@ public class Mitarbeiter extends Personen
 	{
 	
 		//	return "\nMitarbeiter: " + this.getInfo() + "\nMitarbeiternummer: " + this.getPersonalnr() + "\nArbeitet in Abteilung: \" " + getMitarbeiterabteilung() + "\"";
-	return super.toString()+ " " + this.personalnr;
+	return super.toString()+ " " + this.personalnr + " " + this.abteilung;
 	}
 
 	
