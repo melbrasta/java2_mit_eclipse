@@ -3,6 +3,10 @@ package algorithmikaufgaben.personen;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import algorithmikaufgaben.personen.company.Abteilung;
+import algorithmikaufgaben.personen.company.Kunde;
+import algorithmikaufgaben.personen.company.Mitarbeiter;
+
 
 public class Programm 
 {

@@ -1,6 +1,4 @@
-package algorithmikaufgaben.personen;
-
-import algorithmikaufgaben.personen.company.Personen;
+package algorithmikaufgaben.personen.company;
 
 public class Kunde extends Personen
 {

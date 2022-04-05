@@ -3,7 +3,8 @@ package algorithmikaufgaben.personen.listen;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import algorithmikaufgaben.personen.Personen;
+
+import algorithmikaufgaben.personen.company.Personen;
 
 
 public class Personlist

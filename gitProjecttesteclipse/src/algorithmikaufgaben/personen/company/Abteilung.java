@@ -1,4 +1,4 @@
-package algorithmikaufgaben.personen;
+package algorithmikaufgaben.personen.company;
 
 import java.util.LinkedList;
 import java.util.List;
