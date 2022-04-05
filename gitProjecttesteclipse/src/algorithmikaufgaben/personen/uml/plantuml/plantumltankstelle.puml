@@ -1,0 +1,97 @@
+
+class Tankstelle 
+{
+ + name: String
+}
+
+class Lager
+{
+ 
+}
+
+class Zapfsäulen
+{
+ +name: String
+ +nummer: int
+ + gibt: Treibstoff
++menge:int
++ Zapfsäulen(String,int,Treibstoff)
+}
+
+class Shop
+{
+
+}
+
+class Produkt
+{
+
+}
+
+class Treibstoff
+{
+
+}
+
+class Shopartikel
+{
+
+}
+
+class Rechnung
+{
+
+}
+
+class Mitarbeiter 
+{
+- personalnummer: int
++ Mitarbeiter(String, String)
++ Mitarbeiter(int, String, String)
+}
+
+class Person
+{
+-vorname: String
+-nachname: String
+}
+
+class Kunde
+{
+- kundennummer: int
++ Kunde(String, String)
++ Kunde(int, String, String)
+}
+
+interface Sellable
+{
+
+}
+
+
+@startuml
+
+Tankstelle --right- Mitarbeiter : hat
+
+Lager --down- Produkt
+Lager o-- Treibstoff
+Tankstelle *--down- Lager 
+Tankstelle *--down- Zapfsäulen 
+Tankstelle *--down- Shop
+Shop --down- Produkt
+
+
+
+Person <|-- Mitarbeiter 
+Person <|-- Kunde
+
+Produkt <|--right- Shopartikel
+Produkt <|--left- Treibstoff
+
+Produkt ..|> Sellable
+Produkt --up- Zapfsäulen
+
+
+
+
+@enduml
