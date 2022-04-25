@@ -1,7 +1,9 @@
 package dateTime;
 
 import java.util.Scanner;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneOffset;
 
@@ -18,23 +20,14 @@ public class CounterToWeekend
 	{
 		
 
-			LocalDate ldn = LocalDate.now();
-			System.out.println("jetzt " + ldn);
+			int ldtn = LocalDateTime.now().getSecond();
+			System.out.println("aktuelle Sekunden " + ldtn);
 			
 			
+			 
 			
-			
-//			
-//
-//			long dateDiff = ldn.toEpochSecond(LocalTime.of(0, 0),
-//					ZoneOffset.UTC)
-//					- ud2.toEpochSecond(LocalTime.of(0, 0), ZoneOffset.UTC);
-//			long days = dateDiff / 86400;
-//			long years = days / 365;
-//
-//			System.out.println("zwischen beiden Daten liegen: " + years
-//					+ " Jahre. Genauer gesagt: " + days + " Tage.");
-//		
+			DayOfWeek dayname = LocalDate.now().getDayOfWeek();
+			System.out.println(dayname);
 
 	}
 }
