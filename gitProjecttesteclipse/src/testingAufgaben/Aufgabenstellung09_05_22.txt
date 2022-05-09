@@ -1,0 +1,14 @@
+09.05.2022
+Aufgaben:
+
+Erstelle eine Verwaltung für Personen und Angestellte.
+Füge 3-4 Personen und 3-4 Angestellte zu deiner Anwendung hinzu.
+
+Erstelle eine Datenbank zur Speicherung der Personen und Angestellten.
+(jeweils eine für Personen und eine für Angestellte.)
+
+Schreibe einen Datenbank-Controller für Personen.
+Schreibe einen Datenbank-Controller für Angestellte.
+
+Schreibe Testroutinen und teste möglichst alle Klassen und alle Methoden.
+Teste auch die Datenbank-Controller.
