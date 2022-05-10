@@ -3,6 +3,7 @@ package testingAufgaben;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -22,7 +23,7 @@ String dbFileName = "jdbc:sqlite:Personendb.db";
 	
 	public void dropDB() throws SQLException
 	{
-		String query = "DROP TABLE IF EXISTS Employee";
+		String query = "DROP TABLE IF EXISTS Employees";
 		Statement stmt = this.conn.createStatement();
 		
 		stmt.execute(query);
@@ -50,6 +51,32 @@ String dbFileName = "jdbc:sqlite:Personendb.db";
 		
 		return pstmt.execute();
 		
+	}
+
+	public void close() throws SQLException
+	{
+		this.conn.close();
+		
+	}
+	
+	public Employee getEmployeeFromDatabase(int Mitarbeiternummer) throws SQLException
+	{
+		Employee e = null;
+		PreparedStatement pstmt = this.conn.prepareStatement("SELECT * FROM Employees WHERE Mitarbeiternummer=?");
+		pstmt.setInt(1, Mitarbeiternummer);
+		
+		ResultSet rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			e = new Employee(
+					rs.getString("Vorname"),
+					rs.getString("Nachname"),
+					rs.getInt("Mitarbeiternummer")
+					);	
+		}
+		
+		
+		return e;
 	}
 	
 }

@@ -8,27 +8,36 @@ class EmployeeTest
 {
 
 	@Test
-	void testEmployee()
+	void testEmployeeStringStringInt()
 	{
-		fail("Not yet implemented");
+		Employee e = new Employee("Anne", "Arbeitstier", 1);
+		
+		assertEquals(e.getNachname(),"Arbeitstier");
+		assertEquals(e.getVorname(),e.getVorname());
 	}
 
 	@Test
 	void testGetVorname()
 	{
-		fail("Not yet implemented");
+		Employee e = new Employee("Anne", "Arbeitstier", 1);
+		
+		assertEquals(e.getVorname(),"Anne");
 	}
 
 	@Test
 	void testGetNachname()
 	{
-		fail("Not yet implemented");
+		Employee e = new Employee("Anne", "Arbeitstier", 1);
+		
+		assertEquals(e.getNachname(),"Arbeitstier");
 	}
 
 	@Test
 	void testGetMitarbeiternummer()
 	{
-		fail("Not yet implemented");
+		Employee e = new Employee("Anne", "Arbeitstier", 1);
+		
+		assertEquals(e.getMitarbeiternummer(),1);
 	}
 
 }

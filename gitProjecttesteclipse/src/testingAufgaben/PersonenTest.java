@@ -25,7 +25,7 @@ class PersonenTest
 	}
 
 	@Test
-	void testPersonenStinrgString()
+	void testPersonenStringString()
 	{
 		Personen p = new Personen("Willy", "Willnicht");
 		

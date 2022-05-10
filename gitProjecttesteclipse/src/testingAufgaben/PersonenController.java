@@ -3,8 +3,11 @@ package testingAufgaben;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import testing.Produkt;
 
 public class PersonenController
 {
@@ -47,6 +50,41 @@ public class PersonenController
 		pstmt.setString(2, person.getNachname());
 		
 		return pstmt.execute();
+		
+	}
+	
+	public Personen getPersonenFromDatabase( String Vorname ) throws SQLException {
+		
+		Personen p = null;
+		PreparedStatement pstmt = this.conn.prepareStatement("SELECT * FROM Personen WHERE Vorname=?");
+		
+		pstmt.setString(1, Vorname);
+		
+		ResultSet rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			p = new Personen(
+					rs.getString("Vorname"),
+					rs.getString("Nachname")
+					);	
+		}
+		
+		
+		return p;
+	}
+	
+	public void showTables() throws SQLException
+	{
+		String query = "Select * FROM Personen";
+		Statement stmt = this.conn.createStatement();
+		
+		stmt.execute(query);
+		stmt.close();
+	}
+
+	public void close() throws SQLException
+	{
+		this.conn.close();
 		
 	}
 	
