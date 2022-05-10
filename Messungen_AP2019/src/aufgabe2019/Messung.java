@@ -54,6 +54,8 @@ public class Messung {
 		return sollWert;
 	}
 	
+
+	
 	public String toString(){
 	    return "["+getDatum()+"] [" + getZeit()+"] ["+getMessArt()+"] [" + getIstWert() + "] [" + getSollWert()+ "]\n";
 	}

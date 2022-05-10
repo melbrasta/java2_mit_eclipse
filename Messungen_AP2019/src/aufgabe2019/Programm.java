@@ -3,6 +3,7 @@ package aufgabe2019;
 import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -41,27 +42,79 @@ public class Programm {
 	
 //		System.out.println(messung);		//anscheinend unnötig gewesen. mit forEach auch ohne String ToString überschreiben möglich
 		
-		messung.forEach(element ->
+//		Object[] array= messung.toArray();
+//		  String[] array1 = Arrays.copyOf(array,array.length,String[].class);
+//		  
+//		  System.out.println(Arrays.toString(array1));
+//		  
+//		
+//		String[] stringArray = messung.toArray(new String[0]);
+//	    System.out.println("Contents of the array: \n"+Arrays.toString(stringArray));
+	//	System.out.println(array);
+//		System.out.println(messung.get(1));
+//		System.out.println(messung.get(1).getDatum());
+//		System.out.println(messung.get(0).getDatum());
+		
+		
+		for (int i =(messung.size()-1); i>0 ; i--)
 		{
 			int Fehler = 0;
-//			Object[] TagemitMessungen = element.getMessart()
-			
-			LocalDate datumMessung = element.getDatum();
-			if(element.getSollWert() < element.getIstWert())
+			if(messung.get(i).getDatum().equals(messung.get(i-1).getDatum()))	//check Datum
+			{
+				if(messung.get(i).getSollWert() < messung.get(i).getIstWert())	//Wenn Datum gleich, check Fehler
 				{
 					Fehler+=1;
-				} 	
-			
-			Tagesmessungen.add(element);
-			messung.contains(datumMessung);
-			
-			if(messung.contains(datumMessung))
+					System.out.println("------------------------------------\n| messArt| anzahlFehler|"+messung.get(i).getDatum()+" |\n------------------------------------\n");
+					System.out.println("   "+messung.get(i).getMessArt()+"		"+Fehler);		//Fehler +1 und Ausgabe	
+					Fehler = 0;
+				}																//wenn Datum gleich aber KEIN Fehler, ausgabe
+				System.out.println("   "+messung.get(i).getMessArt()+"		"+Fehler);	
+						
+			}else																//wenn Datum ungleich...
 			{
-				System.out.println("gibt es schon");
+				if(messung.get(i).getSollWert() < messung.get(i).getIstWert())	//... check Fehler
+				{
+					Fehler+=1;
+					System.out.println("------------------------------------\n| messArt| anzahlFehler|"+messung.get(i).getDatum()+" |\n------------------------------------\n");
+					System.out.println("   "+messung.get(i).getMessArt()+"		"+Fehler);		
+				}else{															// wenn Datum ungleich und KEIN Fehler
+					System.out.println("------------------------------------\n| messArt| anzahlFehler|"+messung.get(i).getDatum()+" |\n------------------------------------\n");
+					System.out.println("   "+messung.get(i).getMessArt()+"		"+Fehler);		//...Ausgabe
+				}
 			}
-			System.out.println("------------------------------------\n| messArt| anzahlFehler|"+element.getDatum()+" |\n------------------------------------\n");
-			System.out.println("   "+element.getMessArt()+"		"+Fehler);
-		});
+
+		}
+		
+//		messung.forEach(element ->
+//		{
+//			Object[] array= ((List<Messung>) element).toArray();
+//			System.out.println(array);
+			
+			
+//			int Fehler = 0;
+////			Object[] TagemitMessungen = element.getMessart()
+//			
+//			LocalDate datumMessung = element.getDatum();
+//			
+//			element.getDatum().compareTo(datumMessung);
+//			
+//			
+//			
+//			if(element.getSollWert() < element.getIstWert())
+//				{
+//					Fehler+=1;
+//				} 	
+//			
+//			Tagesmessungen.add(element);
+//			messung.contains(datumMessung);
+			
+//			if(messung.contains(datumMessung))
+//			{
+//				System.out.println("gibt es schon");
+//			}
+//			System.out.println("------------------------------------\n| messArt| anzahlFehler|"+element.getDatum()+" |\n------------------------------------\n");
+//			System.out.println("   "+element.getMessArt()+"		"+Fehler);
+//		});
 		
 		
 	
