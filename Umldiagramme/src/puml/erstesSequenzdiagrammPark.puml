@@ -1,0 +1,26 @@
+@startuml
+participant Person1
+
+participant Person2
+
+
+activate Person1
+Person1 <-> Person2 : trifft auf
+
+
+
+Person1 -> Person2 : fragt nach dem Weg zum Bahnhof
+activate Person2
+Person2 -> Person2 :Handy rausholen und das Internet fragen
+activate Person2
+deactivate Person2
+
+Person2 --> Person1 : teilt den Weg mit
+deactivate Person2
+Person1 -> Person1 : geht zum Bahnhof
+activate Person1
+deactivate Person1
+deactivate Person1
+
+
+@enduml
