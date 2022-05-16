@@ -52,10 +52,16 @@ public abstract class DBConnector {
 		
 		
 		JPanel panelLeft = new JPanel();
-		JPanel panelMiddle = new JPanel();
 		JPanel panelRight = new JPanel();
-		JPanel panelBottom = new JPanel();
+		JPanel panelRighTtop = new JPanel();
+		JPanel panelRightBottom = new JPanel();
 
+		
+		
+		//
+		//panel left
+		//
+		//
 		panelLeft.setLayout(new BorderLayout());
 		
 		
@@ -71,21 +77,11 @@ public abstract class DBConnector {
 		
 		JButton btn = new JButton("Add animal to shelter");
 		
-			
-		
-		
-		
-		
-		
-		
+
 		panelLeft.add( text, BorderLayout.NORTH) ;
 		panelLeft.add( dropdown , BorderLayout.CENTER);
 		panelLeft.add(btn,BorderLayout.SOUTH);
 
-		
-		
-		
-		
 		frame.add(panelLeft, BorderLayout.WEST);
 		
 		frame.pack();
@@ -94,59 +90,7 @@ public abstract class DBConnector {
 		
 		
 		
-		//
-		// Middle Panel
-		//
-		
-		panelMiddle.setLayout( new BorderLayout() );
-		JTextField id = new JTextField("ID");
-		JTextField aname = new JTextField("AnimalName");
 
-		
-		
-		panelMiddle.add(id,BorderLayout.WEST);
-		panelMiddle.add(aname,BorderLayout.CENTER);
-		
-		
-		
-		
-		
-		
-		
-//		btn.addActionListener( new ActionListener() {		
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				JOptionPane.showMessageDialog(frame, "Hallo WElt");			
-//			}
-//		});
-		
-		
-//		btn.addActionListener( (e) -> {
-//			String AnimalName = textFirstname.getText();
-//			String lastname = textLastname.getText();
-//			String customerId = textCustomerId.getText();
-//			
-//			JOptionPane.showMessageDialog(frame, firstname + lastname + customerId);
-//		});
-
-		
-//		panelMiddle.add(btn, BorderLayout.SOUTH);
-//		
-//		
-//		ImagePanel ip = new ImagePanel("H:\\Git-Arbeitsordner\\java2_mit_eclipse\\gitProjecttesteclipse\\animalshelter.png");
-//		
-//		
-//		panelMiddle.add(ip, BorderLayout.CENTER);
-//		
-//		
-//		
-		frame.add(panelMiddle, BorderLayout.CENTER);
-//		
-//		
-//		
-//		
-//		
-		frame.pack();		//das Frame auf die Minimalmögliche Größe setzen
 		
 		
 		//
@@ -154,40 +98,52 @@ public abstract class DBConnector {
 		//
 		
 		panelRight.setLayout( new BorderLayout() );
-
+		frame.add(panelRight, BorderLayout.EAST);
+		
+		
+		//
+		//rechts oben
+		//
+		
+		panelRighTtop.setLayout( new BorderLayout() );
+		JTextField id = new JTextField("ID");
+		JTextField aname = new JTextField("AnimalName");
 		JTextField type = new JTextField("Type");
 		JTextField temper = new JTextField("Temper");
 		
 		
-		panelRight.add(type,BorderLayout.WEST);
-		panelRight.add(temper,BorderLayout.CENTER);
-		
-		frame.add(panelRight, BorderLayout.EAST);
-		
+		panelRighTtop.add(id,BorderLayout.WEST);
+		panelRighTtop.add(aname,BorderLayout.CENTER);
+		panelRighTtop.add(type,BorderLayout.EAST);
+//		panelRighTtop.add(temper,BorderLayout.CENTER);
 		frame.pack();	
 		
+		frame.add(panelRighTtop, BorderLayout.EAST);
 		
 		
 		//
-		//BOTTOM Panel
+		// panelRightBottom
 		//
 		
-		panelBottom.setLayout( new BorderLayout() );
-
+		panelRightBottom.setLayout( new BorderLayout() );
+		
 		JTextField idInput = new JTextField("");
 		JTextField anameInput = new JTextField("");
 		JTextField typeInput = new JTextField("");
-		JTextField temperInput = new JTextField("");
+//		JTextField temperInput = new JTextField("");
 		
-		panelBottom.add(idInput,BorderLayout.WEST);
-		panelBottom.add(anameInput,BorderLayout.CENTER);
-		panelBottom.add(typeInput,BorderLayout.EAST);
-//		panelBottom.add(temperInput,BorderLayout.WEST);
+//		frame.add(panelRightBottom, BorderLayout.SOUTH);
 		
 		
-		frame.add(panelBottom, BorderLayout.SOUTH);
-		
+		panelRightBottom.add(idInput,BorderLayout.WEST);
+		panelRightBottom.add(anameInput,BorderLayout.CENTER);
+		panelRightBottom.add(typeInput,BorderLayout.EAST);
 		frame.pack();	
+		
+		frame.add(panelRightBottom, BorderLayout.WEST);
+		
+		
+
 
 	}
 	

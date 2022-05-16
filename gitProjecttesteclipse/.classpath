@@ -7,8 +7,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="mysql-connector-java-8.0.29.jar"/>
-	<classpathentry kind="lib" path="postgresql-42.3.5.jar"/>
-	<classpathentry kind="lib" path="sqlite-jdbc-3.36.0.3.jar"/>
+	<classpathentry kind="lib" path="D:/Git/java2_mit_eclipse/gitProjecttesteclipse/mysql-connector-java-8.0.29.jar"/>
+	<classpathentry kind="lib" path="D:/Git/java2_mit_eclipse/gitProjecttesteclipse/postgresql-42.3.5.jar"/>
+	<classpathentry kind="lib" path="D:/Git/java2_mit_eclipse/gitProjecttesteclipse/sqlite-jdbc-3.36.0.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

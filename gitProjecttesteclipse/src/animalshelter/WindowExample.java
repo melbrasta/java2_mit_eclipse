@@ -27,7 +27,7 @@ public class WindowExample extends JDialog {
 		
 		
 		JPanel panelLeft = new JPanel();
-		JPanel panelMiddle = new JPanel();
+		JPanel panelRightTop = new JPanel();
 		JPanel panelRight = new JPanel();
 		JPanel panelBottom = new JPanel();
 
@@ -91,55 +91,55 @@ public class WindowExample extends JDialog {
 		// Middle Panel
 		//
 		
-		panelMiddle.setLayout( new BorderLayout() );
-		JTextField id = new JTextField("ID");
-		JTextField aname = new JTextField("AnimalName");
-
-		
-		
-		panelMiddle.add(id,BorderLayout.WEST);
-		panelMiddle.add(aname,BorderLayout.CENTER);
-		
-		
-		
-		
-		
-		
-		
-//		btn.addActionListener( new ActionListener() {		
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				JOptionPane.showMessageDialog(frame, "Hallo WElt");			
-//			}
-//		});
-		
-		
-//		btn.addActionListener( (e) -> {
-//			String AnimalName = textFirstname.getText();
-//			String lastname = textLastname.getText();
-//			String customerId = textCustomerId.getText();
-//			
-//			JOptionPane.showMessageDialog(frame, firstname + lastname + customerId);
-//		});
-
-		
-//		panelMiddle.add(btn, BorderLayout.SOUTH);
+//		panelMiddle.setLayout( new BorderLayout() );
+//		JTextField id = new JTextField("ID");
+//		JTextField aname = new JTextField("AnimalName");
+//
 //		
 //		
-//		ImagePanel ip = new ImagePanel("H:\\Git-Arbeitsordner\\java2_mit_eclipse\\gitProjecttesteclipse\\animalshelter.png");
-//		
-//		
-//		panelMiddle.add(ip, BorderLayout.CENTER);
-//		
-//		
-//		
-		frame.add(panelMiddle, BorderLayout.CENTER);
+//		panelMiddle.add(id,BorderLayout.WEST);
+//		panelMiddle.add(aname,BorderLayout.CENTER);
 //		
 //		
 //		
 //		
 //		
-		frame.pack();		//das Frame auf die Minimalmögliche Größe setzen
+//		
+//		
+////		btn.addActionListener( new ActionListener() {		
+////			@Override
+////			public void actionPerformed(ActionEvent e) {
+////				JOptionPane.showMessageDialog(frame, "Hallo WElt");			
+////			}
+////		});
+//		
+//		
+////		btn.addActionListener( (e) -> {
+////			String AnimalName = textFirstname.getText();
+////			String lastname = textLastname.getText();
+////			String customerId = textCustomerId.getText();
+////			
+////			JOptionPane.showMessageDialog(frame, firstname + lastname + customerId);
+////		});
+//
+//		
+////		panelMiddle.add(btn, BorderLayout.SOUTH);
+////		
+////		
+////		ImagePanel ip = new ImagePanel("H:\\Git-Arbeitsordner\\java2_mit_eclipse\\gitProjecttesteclipse\\animalshelter.png");
+////		
+////		
+////		panelMiddle.add(ip, BorderLayout.CENTER);
+////		
+////		
+////		
+//		frame.add(panelMiddle, BorderLayout.CENTER);
+////		
+////		
+////		
+////		
+////		
+//		frame.pack();		//das Frame auf die Minimalmögliche Größe setzen
 		
 		
 		//
@@ -148,12 +148,12 @@ public class WindowExample extends JDialog {
 		
 		panelRight.setLayout( new BorderLayout() );
 
-		JTextField type = new JTextField("Type");
-		JTextField temper = new JTextField("Temper");
+//		JTextField type = new JTextField("Type");
+//		JTextField temper = new JTextField("Temper");
 		
 		
-		panelRight.add(type,BorderLayout.WEST);
-		panelRight.add(temper,BorderLayout.CENTER);
+//		panelRight.add(type,BorderLayout.WEST);
+//		panelRight.add(temper,BorderLayout.CENTER);
 		
 		frame.add(panelRight, BorderLayout.EAST);
 		
