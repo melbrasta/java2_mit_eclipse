@@ -1,6 +1,14 @@
 package animalshelter;
 
+import java.awt.BorderLayout;
 import java.time.LocalDate;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class AnimalShelter {
 	private String name;
@@ -13,11 +21,7 @@ public class AnimalShelter {
 	public void addAnimal( Animal animal ) {
 		
 		
-		
-	//	Animal[]
-		
-	//	Animal(int type, String name, LocalDate dob, int temper, boolean adoptable)
-		
+			
 	}
 	
 	public void setAnimal( int id, Animal animal ) {

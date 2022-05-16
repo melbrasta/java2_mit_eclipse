@@ -1,48 +1,23 @@
 package animalshelter;
 
 import java.awt.BorderLayout;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.awt.Button;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public abstract class DBConnector {
-	private Connection conn;
-	
-	public abstract void connect()throws SQLException, ClassNotFoundException;
-	public abstract void createDatabase() throws SQLException;
-	public abstract void dropDatabase() throws SQLException ;
-	
-	
-	public void connect(String connection) throws SQLException {
-		this.conn = DriverManager.getConnection(connection);
-	}
-	
-	public Connection getConnection() {
-		return this.conn;
-	}
-	
-	public AnimalShelter[] getAllShelters() {
-		return null;
-	}
-	
-	public void addShelter( AnimalShelter shelter ) {
-		
-	}
-	
-	public AnimalShelter getShelter( AnimalShelter shelter ) {
-		return null;
-	}	
-	
-	public void addAnimalToShelter(AnimalShelter shelter,  Animal animal ) {
-		
-		
+
+public class WindowExample extends JDialog {
+
+	public WindowExample() throws IOException {
 		JFrame frame = new JFrame( "AnimalShelter");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize( 600,400);
@@ -62,8 +37,7 @@ public abstract class DBConnector {
 		JLabel text = new JLabel("Shelter zum hinzufügen der Tiere wählen");
 		
 		JComboBox<String> dropdown = new JComboBox<> ();
-		
-		panelLeft.add(dropdown,BorderLayout.NORTH);
+		this.add(dropdown,BorderLayout.NORTH);
 		
 		dropdown.addItem("Shelter 1");
 		dropdown.addItem("Shelter 2");
@@ -71,6 +45,25 @@ public abstract class DBConnector {
 		
 		JButton btn = new JButton("Add animal to shelter");
 		
+//		dropdown.addActionListener( (e) -> {
+//			String selection = (String)dropdown.getSelectedItem();
+//			
+//			switch( selection ) {
+//			case "Shelter 1":
+//				
+//				db.getShelterName();		//TODO
+				
+//				programSettings.setDatabase(Settings.DB_SQLITE3);
+//				break;
+//			case "Shelter 2":
+//				programSettings.setDatabase(Settings.DB_MYSQL);
+//				break;
+//			case "Shelter 3":
+//				programSettings.setDatabase(Settings.DB_POSTGRES);
+//				break;
+//			}
+//			
+//		
 			
 		
 		
@@ -188,32 +181,13 @@ public abstract class DBConnector {
 		frame.add(panelBottom, BorderLayout.SOUTH);
 		
 		frame.pack();	
-
+		
+		
+		
 	}
 	
-	public void changeAnimalInShelter(AnimalShelter shelter,  Animal animal ) {
+	public static void main(String[] args) throws IOException {
+		WindowExample we = new WindowExample();
+		
 	}
-	
-	public Animal getAnimalFromShelter( int shelterId ,  int id ) {
-		return null;
-	}
-	
-	public Animal removeAnimalFromShelter( AnimalShelter shelter, int id ) {
-		return null;
-	}
-	
-	public Animal[] listAllAnimalsInShelter(AnimalShelter shelter,  int shelterId ) {
-		return null;
-	}
-	
-	public void close() throws SQLException {
-		if(this.conn !=null)
-		{
-			this.conn.close();
-		}
-	}
-	
-	
-
-	
 }
