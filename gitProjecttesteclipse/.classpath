@@ -10,5 +10,9 @@
 	<classpathentry kind="lib" path="D:/Git/java2_mit_eclipse/gitProjecttesteclipse/mysql-connector-java-8.0.29.jar"/>
 	<classpathentry kind="lib" path="D:/Git/java2_mit_eclipse/gitProjecttesteclipse/postgresql-42.3.5.jar"/>
 	<classpathentry kind="lib" path="D:/Git/java2_mit_eclipse/gitProjecttesteclipse/sqlite-jdbc-3.36.0.3.jar"/>
+	<classpathentry kind="lib" path="/Java/mysql-connector-java-8.0.29.jar"/>
+	<classpathentry kind="lib" path="/Java/postgresql-42.3.5.jar"/>
+	<classpathentry kind="lib" path="/Java/sqlite-jdbc-3.36.0.3.jar"/>
+	<classpathentry kind="src" path="/Java"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

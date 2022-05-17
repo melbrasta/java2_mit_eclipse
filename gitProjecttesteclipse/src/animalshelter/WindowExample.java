@@ -17,6 +17,8 @@ import javax.swing.JTextField;
 
 public class WindowExample extends JDialog {
 
+	private JComboBox<AnimalShelter> dropdown = new JComboBox<> ();
+
 	public WindowExample() throws IOException {
 		JFrame frame = new JFrame( "AnimalShelter");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,12 +38,12 @@ public class WindowExample extends JDialog {
 		
 		JLabel text = new JLabel("Shelter zum hinzufügen der Tiere wählen");
 		
-		JComboBox<String> dropdown = new JComboBox<> ();
+		
 		this.add(dropdown,BorderLayout.NORTH);
 		
-		dropdown.addItem("Shelter 1");
-		dropdown.addItem("Shelter 2");
-		dropdown.addItem("Shelter 3");
+		dropdown.addItem(null);
+		dropdown.addItem();
+		dropdown.addItem();
 		
 		JButton btn = new JButton("Add animal to shelter");
 		

@@ -25,7 +25,7 @@ class AnimalShelterTest
 	@Test
 	void testSetAnimal()
 	{
-		
+		fail("Not yet implemented");
 	}
 
 	@Test
