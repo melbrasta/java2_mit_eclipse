@@ -27,7 +27,7 @@ public class AnimalShelter {
 	public void setAnimal( int id, Animal animal ) {
 	}
 	
-	public String getShelterName()
+	public String getShelterName(String name)
 	{
 		return this.name;
 		
@@ -39,17 +39,6 @@ public class AnimalShelter {
 	
 	public Animal delAnimal( int id) {
 		return null;
-	}
-	
-	
-	
-	public AnimalShelter getSelectedShelter ( )  {
-		
-		AnimalShelter animalShelter = null;
-		animalShelter  = (AnimalShelter)WindowExample.dropdown.getSelectedItem();
-		
-		return animalShelter;
-	
 	}
 	
 	

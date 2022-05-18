@@ -3,12 +3,7 @@ package animalshelter;
 import java.awt.BorderLayout;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
-import java.util.LinkedList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -33,24 +28,8 @@ public abstract class DBConnector {
 		return this.conn;
 	}
 	
-	public static AnimalShelter[] getAllShelters() throws SQLException {
-		LinkedList<AnimalShelter> animalShelters = new LinkedList<>();		//LinkedList
-		
-		String query="SELECT * FROM animalshelter";
-		
-		Statement stmt = this.conn.createStatement();
-		ResultSet rs = stmt.executeQuery(query);
-		
-		while( rs.next() ) {
-			AnimalShelter animalShelter = new AnimalShelter(rs.getString("name"));
-			animalShelters.add(animalShelter);
-		}
-		
-		rs.close();
-		stmt.close();
-		
-		
-		return animalShelters.toArray(new AnimalShelter[0]);
+	public AnimalShelter[] getAllShelters() {
+		return null;
 	}
 	
 	public void addShelter( AnimalShelter shelter ) {
@@ -63,7 +42,105 @@ public abstract class DBConnector {
 	
 	public void addAnimalToShelter(AnimalShelter shelter,  Animal animal ) {
 		
-	
+		
+		JFrame frame = new JFrame( "AnimalShelter");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize( 600,400);
+		frame.setVisible(true);
+		
+		frame.setLayout( new BorderLayout() );
+		
+		
+		JPanel panelLeft = new JPanel();
+		JPanel panelRight = new JPanel();
+		JPanel panelRighTtop = new JPanel();
+		JPanel panelRightBottom = new JPanel();
+
+		
+		
+		//
+		//panel left
+		//
+		//
+		panelLeft.setLayout(new BorderLayout());
+		
+		
+		JLabel text = new JLabel("Shelter zum hinzufügen der Tiere wählen");
+		
+		JComboBox<String> dropdown = new JComboBox<> ();
+		
+		panelLeft.add(dropdown,BorderLayout.NORTH);
+		
+		dropdown.addItem("Shelter 1");
+		dropdown.addItem("Shelter 2");
+		dropdown.addItem("Shelter 3");
+		
+		JButton btn = new JButton("Add animal to shelter");
+		
+
+		panelLeft.add( text, BorderLayout.NORTH) ;
+		panelLeft.add( dropdown , BorderLayout.CENTER);
+		panelLeft.add(btn,BorderLayout.SOUTH);
+
+		frame.add(panelLeft, BorderLayout.WEST);
+		
+		frame.pack();
+		
+		
+		
+		
+		
+
+		
+		
+		//
+		//Right Panel
+		//
+		
+		panelRight.setLayout( new BorderLayout() );
+		frame.add(panelRight, BorderLayout.EAST);
+		
+		
+		//
+		//rechts oben
+		//
+		
+		panelRighTtop.setLayout( new BorderLayout() );
+		JTextField id = new JTextField("ID");
+		JTextField aname = new JTextField("AnimalName");
+		JTextField type = new JTextField("Type");
+		JTextField temper = new JTextField("Temper");
+		
+		
+		panelRighTtop.add(id,BorderLayout.WEST);
+		panelRighTtop.add(aname,BorderLayout.CENTER);
+		panelRighTtop.add(type,BorderLayout.EAST);
+//		panelRighTtop.add(temper,BorderLayout.CENTER);
+		frame.pack();	
+		
+		frame.add(panelRighTtop, BorderLayout.EAST);
+		
+		
+		//
+		// panelRightBottom
+		//
+		
+		panelRightBottom.setLayout( new BorderLayout() );
+		
+		JTextField idInput = new JTextField("");
+		JTextField anameInput = new JTextField("");
+		JTextField typeInput = new JTextField("");
+//		JTextField temperInput = new JTextField("");
+		
+//		frame.add(panelRightBottom, BorderLayout.SOUTH);
+		
+		
+		panelRightBottom.add(idInput,BorderLayout.WEST);
+		panelRightBottom.add(anameInput,BorderLayout.CENTER);
+		panelRightBottom.add(typeInput,BorderLayout.EAST);
+		frame.pack();	
+		
+		frame.add(panelRightBottom, BorderLayout.WEST);
 		
 		
 
@@ -81,31 +158,8 @@ public abstract class DBConnector {
 		return null;
 	}
 	
-	public Animal[] listAllAnimalsInShelter(AnimalShelter shelter ) throws SQLException {
-		LinkedList<Animal> animals = new LinkedList<>();
-		String query = "SELECT animal.* FROM animal, animalDetails, animalShelter WHERE animalShelter.name = ? AND animalDetails.shelterId = animalShelter.shelterId AND animal.animalId = animalDetails.animalId ";
-		
-		PreparedStatement pstmt = this.conn.prepareStatement(query);
-		pstmt.setString(1, shelter.getShelterName());
-		
-		ResultSet rs = pstmt.executeQuery();
-		
-		while(rs.next()) {
-			Animal animal = new Animal(rs.getInt("typeId") ,
-					rs.getString("name"),
-					LocalDate.parse( rs.getString("dob").split(" ")[0]),
-					rs.getInt("temperId"),
-					rs.getBoolean("adoptable"));
-					
-			animals.add(animal);
-			
-		}
-		
-		rs.close();
-		pstmt.close();
-		
-				
-		return animals.toArray(new Animal[0]);
+	public Animal[] listAllAnimalsInShelter(AnimalShelter shelter,  int shelterId ) {
+		return null;
 	}
 	
 	public void close() throws SQLException {
@@ -113,24 +167,6 @@ public abstract class DBConnector {
 		{
 			this.conn.close();
 		}
-	}
-	
-	
-	public String getTypeFromId( int typeId ) throws SQLException {
-		String typeName = null;
-		
-		String query= "SELECT typeName from Type where typeId = ? LIMIT 1";
-		PreparedStatement pstmt = this.conn.prepareStatement(query);
-		
-		pstmt.setInt(1, typeId);
-		
-		ResultSet rs = pstmt.executeQuery();
-		
-		if(rs.next()) {
-			typeName = rs.getString("typeName");
-		}
-		
-		return typeName;
 	}
 	
 	

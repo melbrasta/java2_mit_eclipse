@@ -1,7 +1,5 @@
 package animalshelter;
 
-import animalshelter.PostgresDBConnector;
-
 public class Settings {
 	public static final int DB_SQLITE3 = 0x01;
 	public static final int DB_MYSQL = 0x02;
@@ -71,25 +69,6 @@ public class Settings {
 
 	public void setDatabaseDB(String databaseDB) {
 		this.databaseDB = databaseDB;
-	}
-
-
-
-
-	public DBConnector getDatabaseConnector() {
-		switch ( this.getDatabase() ) {
-		case Settings.DB_SQLITE3:
-			return new SQLiteConnector();
-			
-		case Settings.DB_MYSQL:
-			return new MySQLConnector();
-			
-		case Settings.DB_POSTGRES:
-			return new PostgresDBConnector();
-				
-		}
-		
-		return null;
 	}
 	
 	
